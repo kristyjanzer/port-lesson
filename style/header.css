@@ -1,0 +1,142 @@
+.header {
+  background-color: #A1B7C8;
+  min-height: 60px;
+  padding: 13px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  width: 124px;
+}
+
+.header__contacts-burger {
+  display: block;
+  width: 27px;
+  height: 14px;
+  background-image: url('../img/menu.svg');
+}
+
+.contacts {
+  position: absolute;
+  background-color: #A1B7C8;
+  top: 61px;
+  left: 0;
+  right: 0;
+  padding: 30px 15px;
+  color: #fff;
+  display: none;
+}
+
+.contacts.active {
+  display: block;
+}
+
+.contacts__item:not(:last-child) {
+  margin-bottom: 50px;
+}
+
+.contacts__head {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.contacts__head_social {
+  margin-bottom: 12px;
+}
+
+.contacts__link {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.contacts__social-list {
+  display: flex;
+}
+
+.contacts__social-item:not(:last-child) {
+  margin-right: 18px;
+}
+
+.contacts__social-link {
+  width: 26px;
+  height: 26px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contacts__social-link_whatsapp {
+  background-image: url('../img/whatsapp.svg');
+}
+.contacts__social-link_instagram {
+  background-image: url('../img/instagram.svg');
+}
+.contacts__social-link_facebook {
+  background-image: url('../img/facebook.svg');
+}
+.contacts__social-link_telegram {
+  background-image: url('../img/telegram.svg');
+}
+
+@media (min-width: 768px) {
+  .header {
+    min-height: 100px;
+    padding: 28px 0;
+  }
+  .header__logo {
+    width: 180px;
+  }
+  .contacts {
+    top: 101px;
+    padding: 40px;
+  }
+  .contacts__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contacts__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .header {
+    width: 240px;
+    padding: 50px 0;
+  }
+  .header__container {
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 20px;
+  }
+  .header__contacts-burger {
+    display: none;
+  }
+  .contacts {
+    position: static;
+    display: block;
+    padding: 0;
+  }
+  .contacts__list {
+    flex-direction: column;
+  }
+  .contacts__item:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .header {
+    width: 355px;
+    padding-top: 60px;
+  }
+}
