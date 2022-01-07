@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/normalize.css">
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <title>Портфолио</title>
 </head>
 <body class="page">
@@ -58,7 +59,7 @@
           <p class="present__description">
             Меня зовут Кир Сорокин, я разработчик сайтов с&nbsp;опытом 1&nbsp;год
           </p>
-          <button class="present__order-btn">Заказать</button>
+          <button class="present__order-btn btn">Заказать</button>
         </div>
       </div>
     </section>
@@ -78,9 +79,9 @@
     <section class="portfolio">
       <div class="container">
         <h2 class="portfolio__title">Портфолио</h2>
-        <div class="portfolio__slider">
-          <ul class="portfolio__list">
-            <li class="portfolio__item">
+        <div class="portfolio__slider swiper">
+          <ul class="portfolio__list swiper-wrapper">
+            <li class="portfolio__item swiper-slide">
               <article class="card">
                 <img class="card__picture" src="img/cinema.jpg" alt="">
                 <p class="card__data">
@@ -90,9 +91,9 @@
                 <h3 class="card__title">Многостраничный сайт</h3>
               </article>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item swiper-slide">
               <article class="card">
-                <img class="card__picture" src="" alt="">
+                <img class="card__picture" src="img/iphone.jpg" alt="">
                 <p class="card__data">
                   <span class="card__client">Клиент: Full Apple</span>
                   <time class="card__date" datetime="2020">год: 2020</time>
@@ -100,9 +101,9 @@
                 <h3 class="card__title">Landing-page</h3>
               </article>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item swiper-slide">
               <article class="card">
-                <img class="card__picture" src="" alt="">
+                <img class="card__picture" src="img/go.jpg" alt="">
                 <p class="card__data">
                   <span class="card__client">Клиент: Game Over</span>
                   <time class="card__date" datetime="2019">год: 2019</time>
@@ -110,9 +111,9 @@
                 <h3 class="card__title">Landing-page</h3>
               </article>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item swiper-slide">
               <article class="card">
-                <img class="card__picture" src="" alt="">
+                <img class="card__picture" src="img/friendly_house.jpg" alt="">
                 <p class="card__data">
                   <span class="card__client">Клиент: Friendly House</span>
                   <time class="card__date" datetime="2020">год: 2020</time>
@@ -120,9 +121,9 @@
                 <h3 class="card__title">Landing-page</h3>
               </article>
             </li>
-            <li class="portfolio__item">
+            <li class="portfolio__item swiper-slide">
               <article class="card">
-                <img class="card__picture" src="" alt="">
+                <img class="card__picture" src="img/dom.jpg" alt="">
                 <p class="card__data">
                   <span class="card__client">Клиент: ItalGroup boutique</span>
                   <time class="card__date" datetime="2020">год: 2020</time>
@@ -131,11 +132,63 @@
               </article>
             </li>
           </ul>
+          <button class="portfolio__arrow portfolio__arrow_left"></button>
+          <button class="portfolio__arrow portfolio__arrow_right"></button>
         </div>
       </div>
     </section>
   </main>
 
+  <div class="page__overlay page__overlay_modal">
+    <div class="modal">
+      <h2 class="modal__title">Заполните форму и я свяжусь с вами</h2>
+
+      <form class="modal__form callback">
+        
+        <fieldset class="callback__group">
+          <legend class="visually-hidden">Личные данные</legend>
+          <label class="callback__label">
+            <span class="callback__label-text">ФИО</span>
+            <input class="callback__input" type="text" name="bio" placeholder="Введите ваше ФИО">
+          </label>
+          <label class="callback__label">
+            <span class="callback__label-text">Телефон</span>
+            <input class="callback__input" type="text" name="phone" placeholder="Введите ваш номер телефона">
+          </label>
+        </fieldset>
+
+        <fieldset class="callback__group connect">
+          <legend class="connect__title">Где удобнее связаться?</legend>
+          <label class="connect__label">
+            <input class="connect__radio" type="radio" name="connect" value="telegram">
+            <span class="connect__text">Телеграмм</span>
+          </label>
+          <label class="connect__label">
+            <input class="connect__radio" type="radio" name="connect" value="whatsapp">
+            <span class="connect__text">Whatsapp</span>
+          </label>
+          <label class="connect__label">
+            <input class="connect__radio" type="radio" name="connect" value="call">
+            <span class="connect__text">Позвонить</span>
+          </label>
+          <label class="connect__label">
+            <input class="connect__radio" type="radio" name="connect" value="viber">
+            <span class="connect__text">Viber</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="callback__btn btn">Отправить</button>
+      </form>
+      <button class="modal__close">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 -0.707107 0.707106 0.707107 0 20.625)" fill="#282626"/>
+          <rect width="29.1681" height="1.94454" rx="0.972271" transform="matrix(0.707106 0.707107 -0.707106 0.707107 1.375 0)" fill="#282626"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
   
 </body>
